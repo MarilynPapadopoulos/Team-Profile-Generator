@@ -1,5 +1,4 @@
-const Employee = require('..lib/Employee.js');
-const { TestScheduler } = require('@jest/core');
+const Employee = require('../lib/Employee.js');
 
 
 describe('employee tests', ()=> {
@@ -17,9 +16,9 @@ describe('employee tests', ()=> {
     test('tests the name propery of employee', () => {
         expect(employee.email).toBe('marilyn@mail.com');
         expect(typeof employee.email).toBe('string');
-        expect(employee.getMail()).toBe('marilyn@mail.com')
+        expect(employee.getEmail()).toBe('marilyn@mail.com')
     })
     test('test if get role is returns employee', () => {
-        expect(employee.getRole().toBe('Employee'));
+        expect(employee.getRole()).toBe('Employee');
     })
 });

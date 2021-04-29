@@ -2,6 +2,7 @@ const inquirer = require("inquirer");
 const Manager = require('./lib/Manager.js');
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
+const generatePage = require('./src/html-template.js');
 
 const teamArray =[];
 
@@ -59,6 +60,8 @@ const promptUser = () => {
     .then(answers => {
         const manager = new Manager(answers.name, answers.id, answers.email, answers.number);
         teamArray.push(manager);
+        console.log(Manager, typeof Manager);
+        console.log(Manager.name, typeof Manager.name);
         promptTeam();
     }) 
 }
@@ -84,7 +87,7 @@ promptTeam = () => {
     if (answers.role === "I would like to add and intern to my team.") {
         promptIntern();
     }
-    if(answers.role === "I am finished building my team") {
+    if(answers.role === "I am finished building my team.") {
         teamCompleted();
     }
 })
@@ -149,8 +152,11 @@ promptIntern = () => {
     })
 }
 teamCompleted = () => {
-    //call function to generate HTML
+    generatePage(teamArray);
+    
 }
 
 promptUser();
+
+module.exports = [teamArray];
    

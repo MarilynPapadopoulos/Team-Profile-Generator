@@ -2,7 +2,9 @@ const inquirer = require("inquirer");
 const Manager = require('./lib/Manager.js');
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
-const generatePage = require('./src/html-template.js');
+
+const fs = require("fs");
+const generatePage = require("./src/html-template.js");
 
 const teamArray =[];
 
@@ -152,11 +154,15 @@ promptIntern = () => {
     })
 }
 teamCompleted = () => {
-    generatePage(teamArray);
+    console.log("team Completed", typeof teamArray)
+    fs.writeFile("index.html", generatePage(teamArray), (err) => {
+        if (err) throw err;
+        console.log("File written successfully");
+    });
     
 }
 
 promptUser();
 
-module.exports = [teamArray];
+module.exports = teamArray;
    

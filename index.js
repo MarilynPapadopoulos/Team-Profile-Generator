@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
-const Manager = require('../lib/Manager.js');
-const Engineer = require('../lib/Engineer.js');
-const Intern = require('../lib/Intern.js');
+const Manager = require('./lib/Manager.js');
+const Engineer = require('./lib/Engineer.js');
+const Intern = require('./lib/Intern.js');
 
 const teamArray =[];
 
@@ -57,7 +57,7 @@ const promptUser = () => {
         }
     ])
     .then(answers => {
-        const manager = new Manager(answers.name, answers.id, answers.email, answer.number);
+        const manager = new Manager(answers.name, answers.id, answers.email, answers.number);
         teamArray.push(manager);
         promptTeam();
     }) 
@@ -73,7 +73,7 @@ promptTeam = () => {
             choices: [
                 "I would like to add an engineer to my team.",
                 "I would like to add and intern to my team.",
-                "I am finished building my team",
+                "I am finished building my team."
             ]
         }
 ])
@@ -116,7 +116,7 @@ promptEngineer = () => {
     .then(answers => {
         const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
         teamArray.push(engineer);
-        promptTeam;
+        promptTeam();
     }) 
 }
 promptIntern = () => {
@@ -142,9 +142,9 @@ promptIntern = () => {
             message: "Enter the intern's school."
         }
     ])
-    .then(anwers => {
+    .then(answers => {
         const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
-        teamArray.push(manager);
+        teamArray.push(intern);
         promptTeam();
     })
 }

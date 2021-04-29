@@ -155,7 +155,7 @@ promptIntern = () => {
 }
 teamCompleted = () => {
     console.log("team Completed", typeof teamArray)
-    fs.writeFile("index.html", generatePage(teamArray), (err) => {
+    fs.writeFile("./dist/index.html", generatePage(teamArray), (err) => {
         if (err) throw err;
         console.log("File written successfully");
     });

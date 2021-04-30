@@ -62,8 +62,7 @@ const promptUser = () => {
     .then(answers => {
         const manager = new Manager(answers.name, answers.id, answers.email, answers.number);
         teamArray.push(manager);
-        console.log(Manager, typeof Manager);
-        console.log(Manager.name, typeof Manager.name);
+    
         promptTeam();
     }) 
 }
@@ -154,7 +153,7 @@ promptIntern = () => {
     })
 }
 teamCompleted = () => {
-    console.log("team Completed", typeof teamArray)
+   
     fs.writeFile("./dist/index.html", generatePage(teamArray), (err) => {
         if (err) throw err;
         console.log("File written successfully");

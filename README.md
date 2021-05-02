@@ -16,7 +16,7 @@ The app uses:
 
 ## Usage 
 The following video shows how to use the app:
-![alt text](assets/images/screenshot.png)
+[https://drive.google.com/file/d/1Vz0RMP5z72cWiW9hY-Z66ekgIM3MFcRx/view](https://drive.google.com/file/d/1Vz0RMP5z72cWiW9hY-Z66ekgIM3MFcRx/view)
 
 ## Tests
 
